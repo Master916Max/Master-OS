@@ -1,0 +1,6 @@
+Main:
+    Master:
+        Test:
+            test.pa[print'Hello\n World']
+        Max.pa[print'Hello\n World']
+        start.exe[open 'Max.pa']
