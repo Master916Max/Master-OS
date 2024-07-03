@@ -21,30 +21,30 @@ We welcome various types of contributions, including:
    - Click the "Fork" button at the top right of this page.
 
 2. **Clone Your Fork:**
-   xxxsh
+   ```sh
    git clone https://github.com/your-username/Master-OS.git
    cd Master-OS
-   xxx
+   ```
 
 3. **Create a Branch:**
-   xxxsh
+   ```sh
    git checkout -b feature-or-bugfix-name
-   xxx
+   ```
 
 4. **Make Changes:**
    - Make your changes in your branch.
    - Ensure your code follows the project's coding standards and passes all tests.
 
 5. **Commit Your Changes:**
-   xxxsh
+   ```sh
    git add .
    git commit -m "Description of your changes"
-   xxx
+   ```
 
 6. **Push to Your Fork:**
-   xxxsh
+   ```sh
    git push origin feature-or-bugfix-name
-   xxx
+   ```
 
 7. **Submit a Pull Request:**
    - Go to the original repository and click "New Pull Request".
