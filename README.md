@@ -12,27 +12,10 @@ Master OS is an operating system that uses Windows as a base, managing its own s
 
 - Custom screen management
 - Extended functionalities using CLI
-- Integration with Windows
 
 ## Installation
 
-1. **Clone the Repository:**
-
-    ```sh
-    git clone https://github.com/Master916Max/Master-OS.git
-    ```
-
-2. **Navigate to the Project Directory:**
-
-    ```sh
-    cd Master-OS
-    ```
-
-3. **Run the Help Command:**
-
-    ```sh
-    python help.py -h -b
-    ```
+The Installation is explained at [Installation]()
 
 ## Usage
 
