@@ -15,7 +15,7 @@ Master OS is an operating system that uses Windows as a base, managing its own s
 
 ## Installation
 
-The Installation is explained at [Installation]()
+The Installation is explained at [Installation](https://github.com/Master916Max/Master-OS/wiki)
 
 ## Usage
 
