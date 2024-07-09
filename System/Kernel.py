@@ -2,7 +2,7 @@ import os
 import multiprocessing
 
 #Init
-def StartUp()
+def StartUp():
   from System.KP.SFRP import P4, P2
   error, code = P4()
   if code:
@@ -18,5 +18,5 @@ def StartUp()
     del error
     del code
 
-def Run()
+def Run():
   pass
