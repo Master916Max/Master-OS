@@ -5,7 +5,7 @@ from commanddek import Bcolors
 print(f"{Bcolors.BG_BLUE}{Bcolors.LIGHTWHITE}{os.getcwd()}")
 logging.basicConfig(level=logging.DEBUG, filename="system-log.log", filemode="w",
                     format="%(asctime)s - %(levelname)s - %(message)s")
-log = logging.getLogger("System")
+log = logging.getLogger("Boot")
 handler = logging.FileHandler("F:\\Master1\\log\\system.log")
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 handler.setFormatter(formatter)

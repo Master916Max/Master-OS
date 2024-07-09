@@ -8,7 +8,7 @@ logging.basicConfig(level=logging.DEBUG, filename="system-log.log", filemode="w"
 log = logging.getLogger("Kernel")
 
 # Adding the same handler and formatter used in Boot.py
-handler = logging.FileHandler("F:\\Master1\\log\\kernel.log")
+handler = logging.FileHandler("F:\\Master1\\log\\system.log")
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 handler.setFormatter(formatter)
 log.addHandler(handler)
