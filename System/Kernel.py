@@ -32,3 +32,5 @@ def StartUp():
 
 def Run():
     log.info("Kernel is running")
+    import System.KP.GM as GM
+    GM.run
