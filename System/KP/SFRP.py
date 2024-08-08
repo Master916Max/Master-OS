@@ -19,7 +19,7 @@ def create_kc_files(directory, kp_names):
 def P1():
     """Erstellt KC-Dateien."""
     try:
-        create_kc_files('F://Master1/System/KC', ['KP1', 'KP2'])  # Beispiel: KC-Dateien für KP1 und KP2 erstellen
+        create_kc_files('F://Master/System/KC', ['OS', 'GM'])  # Beispiel: KC-Dateien für KP1 und KP2 erstellen
         return None, 0  # Kein Fehler
     except Exception as e:
         return str(e), 1  # Fehler aufgetreten
@@ -27,7 +27,7 @@ def P1():
 def P2():
     """Überprüft, ob der KC-Ordner vorhanden ist, und erstellt ihn falls nötig."""
     try:
-        kc_directory = 'F://Master1/System/KC'
+        kc_directory = 'F://Master/System/KC'
         if not os.path.exists(kc_directory):
             os.makedirs(kc_directory)
             print(f"Created directory: {kc_directory}")
@@ -39,7 +39,7 @@ def P2():
 def P3():
     """Erstellt SCCF-Dateien."""
     try:
-        create_sccf_files('F://Master1/System/SCCF', 5)  # Beispiel: 5 SCCF-Dateien erstellen
+        create_sccf_files('F://Master/System/SCCF', 5)  # Beispiel: 5 SCCF-Dateien erstellen
         return None, 0  # Kein Fehler
     except Exception as e:
         return str(e), 1  # Fehler aufgetreten
@@ -47,7 +47,7 @@ def P3():
 def P4():
     """Überprüft, ob der SCCF-Ordner vorhanden ist, und erstellt ihn falls nötig."""
     try:
-        sccf_directory = 'F://Master1/System/SCCF'
+        sccf_directory = 'F://Master/System/SCCF'
         if not os.path.exists(sccf_directory):
             os.makedirs(sccf_directory)
             print(f"Created directory: {sccf_directory}")

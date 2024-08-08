@@ -1,6 +1,10 @@
 import pygame
 import pickle
 import os
+# System Managers
+import task_bar as tb
+# import apps as app
+# import person
 
 def save_screen_resolution(filename):
     """Speichert die aktuelle Bildschirmauflösung in einer Pickle-Datei."""
@@ -19,7 +23,7 @@ def load_graphics_data(filename):
             graphics_data = pickle.load(f)
     else:
         graphics_data = []
-    return graphics_data
+    return graphics_data + tb.get_taskbar()
 
 def main():
     # Initialisiere Pygame
@@ -33,11 +37,11 @@ def main():
     screen = pygame.display.set_mode((screen_width, screen_height), pygame.FULLSCREEN)
 
     # Speichere Bildschirmauflösung
-    resolution_file = 'F://Master1/System/KC/DS.coms'
+    resolution_file = 'F:/Master/System/KC/DS.coms'
     save_screen_resolution(resolution_file)
 
     # Lade anfängliche Grafikdaten
-    graphics_file = 'F://Master1/System/KC/gm.coms'
+    graphics_file = 'F:/Master/System/KC/GM.coms'
     graphics_data = load_graphics_data(graphics_file)
 
     # Haupt-Render-Schleife
@@ -51,7 +55,7 @@ def main():
         graphics_data = load_graphics_data(graphics_file)
         
         # Fülle den Bildschirm mit Hintergrundfarbe (schwarz)
-        screen.fill((0, 0, 0))
+        screen.fill((0, 0, 255))
         
         # Zeichne die Formen aus den Grafikdaten
         for shape in graphics_data:
@@ -59,6 +63,8 @@ def main():
                 pygame.draw.rect(screen, shape['color'], pygame.Rect(*shape['rect']))
             elif shape['type'] == 'circle':
                 pygame.draw.circle(screen, shape['color'], shape['center'], shape['radius'])
+            elif shape['type'] == 'taskbar':
+                pygame.draw.rect(screen, shape['color'], pygame.Rect(*shape['rect']))
         
         # Aktualisiere den Bildschirm
         pygame.display.flip()

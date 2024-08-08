@@ -1,4 +1,6 @@
 log
 *.log
 *.ini
+*.coms
+*.sccf
 __pycache__

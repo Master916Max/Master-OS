@@ -19,4 +19,23 @@ def load_graphics_data(filename):
         shapes = pickle.load(f)
     return shapes
 
-save_graphics_data("gm.coms")
+save_graphics_data("GM.coms")
+
+
+from KP.Register import Register
+
+def setup_background(register):
+    """Setzt den Hintergrundtyp und die entsprechenden Daten im Register."""
+    # Beispielwerte
+    background_type = 'color'  # 'color' oder 'image'
+    background_value = (0, 0, 255)  # Farbe als (R, G, B) oder Bildpfad
+
+    register.set_entry('System.Grafik.Personalisierung', 'background_type', background_type)
+    register.set_entry('System.Grafik.Personalisierung', 'background_value', str(background_value))  # Konvertiere Tuple in String
+
+# Register initialisieren
+register_db_path = 'F://Master/System/KC/register.db'
+system_register = Register(register_db_path)
+
+# Hintergrund einrichten
+setup_background(system_register)

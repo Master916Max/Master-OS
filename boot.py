@@ -1,29 +1,33 @@
 import logging
-import threading
 import os
+import multiprocessing
 from commanddek import Bcolors
+
 print(f"{Bcolors.BG_BLUE}{Bcolors.LIGHTWHITE}{os.getcwd()}")
 logging.basicConfig(level=logging.DEBUG, filename="system-log.log", filemode="w",
                     format="%(asctime)s - %(levelname)s - %(message)s")
 log = logging.getLogger("Boot")
-handler = logging.FileHandler("F:\\Master1\\log\\system.log")
+handler = logging.FileHandler("F:\\Master\\log\\system.log")
 formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
 handler.setFormatter(formatter)
 log.addHandler(handler)
-log.debug("System is seting up")
-def main_system():
+log.debug("System is setting up")
+
+def start_kernel():
+    import System.Kernel as KE
+    KE.StartUp()
+    log.info("Kernel is Running")
+    KE.Run()
+    log.info("Kernel was Shutdown")
+
+def main_system(log):
     log.info("System is Starting")
-    os.chdir(f"F://Master1")
-    def start():
-        import System.Kernel as KE
-        KE.StartUp()
-        log.info("System is Running")
-        KE.Run()
-        log.info("System was Shutdown")
-    threading.Thread(target=start).start()
+    os.chdir("F://Master")
 
+    kernel_process = multiprocessing.Process(target=start_kernel)
+    kernel_process.start()
 
+    kernel_process.join()
 
 if __name__ == "__main__":
-    main_system()
-
+    main_system(log)
