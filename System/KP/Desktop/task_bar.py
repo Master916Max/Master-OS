@@ -1,10 +1,13 @@
 import pygame
 import pickle
+from multiprocessing import Pipe
+import logging
 
-taskbar = [
-    {'type': 'rect', 'color': (255, 0, 0), 'rect': (50, 50, 500, 400)},
-    {'type': 'rect', 'color': (255, 0, 0), 'rect': (50, 50, 700, 300)}
-]
+log = logging.getLogger("TaskBar")
+handler = logging.FileHandler("F:\\Master\\log\\system.log")
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+handler.setFormatter(formatter)
+log.addHandler(handler)
 
 apps = {}
 
@@ -18,13 +21,19 @@ class TaskBar:
         self.gdata = unpickel("F:/Master/System/KC/DS.coms")
         self.w = self.gdata[0]
         self.h = self.gdata[1]
-        self.taskbar = self.st_b()
+        self.taskba = self.st_b()
     def st_b(self):
         self.st_tb= [
-            {'type': 'taskbar', 'color': (100, 100, 100, 128), 'rect': (0, self.h - 50, self.w, 50)}
+            {'type': 'rect', 'color': (100, 100, 100, 182), 'rect': (0, self.h - 50, self.w, 50), "name": "taskbar"}
         ]
         return self.st_tb
+    def update(self):
+        pass
+    def taskbar(self, pipe):
+        self.pipe = pipe
+        self.update()
+        return self.taskba
 tk = TaskBar()
 
-def get_taskbar():
-    return tk.taskbar
+def get_taskbar(pipee):
+    return tk.taskbar(pipee)
